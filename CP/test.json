@@ -1,111 +1,112 @@
-[{
-        "oracleParams": {
-            "procName": "call NBC_CUST.Pkg_Network_Procedure.Network_Conversion_Validation(?)",
-            "structDescriptor": "NBC_CUST.OT_CH_AGE_ADV_QUART",
-            "arrayDescriptor": "NBC_CUST.NT_CH_AGE_ADV_QUART"
-        },
-        "dealYears": [
-            "647"
-        ],
-        "quarters": [],
-        "channels": [
-            "10153"
-        ],
-        "agencies": [],
-        "advertisers": [],
-        "ratecards": [],
-        "logType": null,
-        "planStatuses": [],
-        "quarterOffsets": [],
-        "userId": 18467,
-        "divisionId": null,
-        "subdivisionId": null,
-        "timeStripId": null,
-        "corporateDemoName": null,
-        "liabDateStr": "3Q18",
-        "loadType": "network",
-        "highPriority": null,
-        "runVersion": null,
-        "archive": -1,
-        "ratecardVersion": null,
-        "payloadId": "a5be24f2-823c-4edf-827a-77301ea8ad83",
-        "executionAttempt": null,
-        "liabDate": null,
-        "divisionName": null,
-        "subdivisionName": null,
-        "scheduleId": "cp-network-10153_647",
-        "scheduleExpression": "0 0 5 1/1 * ? *",
-        "procMap": {},
-        "advanced": {
-            "parallelism": 5,
-            "executionType": "queued"
-        },
-        "psnId": null,
-        "dirtyParams": null,
-        "extractDays": 0,
-        "tibcoJobId": null,
-        "callbackUrl": null,
-        "callbackPayload": null,
-        "ratingSourceCode": null,
-        "supportedOracleType": "NETWORK",
-        "intervalStart": null,
-        "intervalEnd": null,
-        "intervalMinutes": null,
-        "intervalOffsetMinutes": 0
+[
+  {
+    "oracleParams": {
+      "procName": "call NBC_CUST.Pkg_Network_Procedure.Network_Conversion_Validation(?)",
+      "structDescriptor": "NBC_CUST.OT_CH_AGE_ADV_QUART",
+      "arrayDescriptor": "NBC_CUST.NT_CH_AGE_ADV_QUART"
     },
-    {
-        "oracleParams": {
-            "procName": "call NBC_CUST.Pkg_Network_Procedure.Network_Conversion_Validation(?)",
-            "structDescriptor": "NBC_CUST.OT_CH_AGE_ADV_QUART",
-            "arrayDescriptor": "NBC_CUST.NT_CH_AGE_ADV_QUART"
-        },
-        "dealYears": [
-            "649"
-        ],
-        "quarters": [],
-        "channels": [
-            "10153"
-        ],
-        "agencies": [],
-        "advertisers": [],
-        "ratecards": [],
-        "logType": null,
-        "planStatuses": [],
-        "quarterOffsets": [],
-        "userId": 18467,
-        "divisionId": null,
-        "subdivisionId": null,
-        "timeStripId": null,
-        "corporateDemoName": null,
-        "liabDateStr": "3Q18",
-        "loadType": "network",
-        "highPriority": null,
-        "runVersion": null,
-        "archive": -1,
-        "ratecardVersion": null,
-        "payloadId": "216d98de-3d54-46d3-a16f-e3173a062514",
-        "executionAttempt": null,
-        "liabDate": null,
-        "divisionName": null,
-        "subdivisionName": null,
-        "scheduleId": "cp-network-10153_649",
-        "scheduleExpression": "0 0 5 1/1 * ? *",
-        "procMap": {},
-        "advanced": {
-            "parallelism": 5,
-            "executionType": "queued"
-        },
-        "psnId": null,
-        "dirtyParams": null,
-        "extractDays": 0,
-        "tibcoJobId": null,
-        "callbackUrl": null,
-        "callbackPayload": null,
-        "ratingSourceCode": null,
-        "supportedOracleType": "NETWORK",
-        "intervalStart": null,
-        "intervalEnd": null,
-        "intervalMinutes": null,
-        "intervalOffsetMinutes": 0
-        }
+    "dealYears": [
+      "647"
+    ],
+    "quarters": [],
+    "channels": [
+      "10153"
+    ],
+    "agencies": [],
+    "advertisers": [],
+    "ratecards": [],
+    "logType": null,
+    "planStatuses": [],
+    "quarterOffsets": [],
+    "userId": 18467,
+    "divisionId": null,
+    "subdivisionId": null,
+    "timeStripId": null,
+    "corporateDemoName": null,
+    "liabDateStr": "4Q18",
+    "loadType": "network",
+    "highPriority": null,
+    "runVersion": null,
+    "archive": -1,
+    "ratecardVersion": null,
+    "payloadId": "a5be24f2-823c-4edf-827a-77301ea8ad83",
+    "executionAttempt": null,
+    "liabDate": null,
+    "divisionName": null,
+    "subdivisionName": null,
+    "scheduleId": "cp-network-10153_647",
+    "scheduleExpression": "0 0 5 1/1 * ? *",
+    "procMap": {},
+    "advanced": {
+      "parallelism": 5,
+      "executionType": "queued"
+    },
+    "psnId": null,
+    "dirtyParams": null,
+    "extractDays": 0,
+    "tibcoJobId": null,
+    "callbackUrl": null,
+    "callbackPayload": null,
+    "ratingSourceCode": null,
+    "supportedOracleType": "NETWORK",
+    "intervalStart": null,
+    "intervalEnd": null,
+    "intervalMinutes": null,
+    "intervalOffsetMinutes": 0
+  },
+  {
+    "oracleParams": {
+      "procName": "call NBC_CUST.Pkg_Network_Procedure.Network_Conversion_Validation(?)",
+      "structDescriptor": "NBC_CUST.OT_CH_AGE_ADV_QUART",
+      "arrayDescriptor": "NBC_CUST.NT_CH_AGE_ADV_QUART"
+    },
+    "dealYears": [
+      "649"
+    ],
+    "quarters": [],
+    "channels": [
+      "10153"
+    ],
+    "agencies": [],
+    "advertisers": [],
+    "ratecards": [],
+    "logType": null,
+    "planStatuses": [],
+    "quarterOffsets": [],
+    "userId": 18467,
+    "divisionId": null,
+    "subdivisionId": null,
+    "timeStripId": null,
+    "corporateDemoName": null,
+    "liabDateStr": "4Q18",
+    "loadType": "network",
+    "highPriority": null,
+    "runVersion": null,
+    "archive": -1,
+    "ratecardVersion": null,
+    "payloadId": "216d98de-3d54-46d3-a16f-e3173a062514",
+    "executionAttempt": null,
+    "liabDate": null,
+    "divisionName": null,
+    "subdivisionName": null,
+    "scheduleId": "cp-network-10153_649",
+    "scheduleExpression": "0 0 5 1/1 * ? *",
+    "procMap": {},
+    "advanced": {
+      "parallelism": 5,
+      "executionType": "queued"
+    },
+    "psnId": null,
+    "dirtyParams": null,
+    "extractDays": 0,
+    "tibcoJobId": null,
+    "callbackUrl": null,
+    "callbackPayload": null,
+    "ratingSourceCode": null,
+    "supportedOracleType": "NETWORK",
+    "intervalStart": null,
+    "intervalEnd": null,
+    "intervalMinutes": null,
+    "intervalOffsetMinutes": 0
+  }
 ]
