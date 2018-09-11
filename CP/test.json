@@ -52,7 +52,8 @@
     "intervalStart": null,
     "intervalEnd": null,
     "intervalMinutes": null,
-    "intervalOffsetMinutes": 0
+    "intervalOffsetMinutes": 0,
+    "liabDateSt": "4Q18"
   },
   {
     "oracleParams": {
@@ -107,6 +108,7 @@
     "intervalStart": null,
     "intervalEnd": null,
     "intervalMinutes": null,
-    "intervalOffsetMinutes": 0
+    "intervalOffsetMinutes": 0,
+    "liabDateSt": "4Q18"
   }
 ]
