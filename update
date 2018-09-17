@@ -1,0 +1,75 @@
+/*package com.cg.app.service;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import org.apache.tomcat.util.codec.binary.Base64;
+import org.eclipse.egit.github.core.Repository;
+import org.eclipse.egit.github.core.RepositoryContents;
+import org.eclipse.egit.github.core.client.GitHubClient;
+import org.eclipse.egit.github.core.service.ContentsService;
+import org.eclipse.egit.github.core.service.RepositoryService;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+@RefreshScope
+public class Gettest {
+
+public void get() throws IOException {
+		
+		String sb = " ";
+		String TOKEN="9d2cbfbfa34ada92a21d69ff662c52759cf4de01";
+		GitHubClient githubClient = new GitHubClient();
+		githubClient.setOAuth2Token(TOKEN);
+		RepositoryService repoService = new RepositoryService(githubClient);
+		
+			String USER="kodadaiah";
+			String REPONAME="QUARTER";
+			String FILENAME="CP/org.json";
+			//String FILENAME="CP/test.json";
+			Repository repo = repoService.getRepository(USER, REPONAME);
+			
+			ContentsService contentService = new ContentsService(githubClient);
+			List<RepositoryContents> contents = contentService.getContents(repo, FILENAME);
+
+			for (RepositoryContents content : contents) {
+				String fileConent = content.getContent();
+				String valueDecoded = new String(Base64.decodeBase64(fileConent.getBytes()));
+				sb = sb + valueDecoded;
+			}
+		
+			
+
+		JsonArray jsonArray = (JsonArray) new JsonParser().parse(sb);
+		Map<String, Object> fieldsMap = null;
+		JsonObject explrObject = null;
+		List<JsonObject> list = new ArrayList<>();
+		for (int i = 0; i < jsonArray.size(); i++) {
+			fieldsMap = new HashMap<>();
+			explrObject = jsonArray.get(i).getAsJsonObject();
+			//String key = FIELD;
+			//String new_value = FIELD_UPDATE_VALUE;
+			//explrObject.addProperty(key, new_value);
+			list.add(explrObject);
+		}
+		System.out.println(list.size());
+		System.out.println(list.get(27).size());
+		System.out.println(list.get(27));
+	}
+	
+	
+	
+	public static void main(String[] args) throws IOException {
+
+	Gettest test=new Gettest();
+	test.get();
+		
+	}
+
+	}
+*/
