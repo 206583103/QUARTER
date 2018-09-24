@@ -21,6 +21,23 @@ Upon receit of PCR form,IGATE will analyze and assess the impact that the change
 --Engagement Costs 
 
 
+CHANGE IMPACT
+
+Assessment is submitted to client team for appropriate decisions deliverables include
+
+--Effort required for implementing the change 
+--Modified delivery schedule, keeping the resources on project
+--Revised  cost of Project.
+
+
+
+
+
+IMPLEMNT CHANGE
+Upon receipt of acceptance from client,
+IGATE will implement the change
+--Change request decisions will be distributed to appropriate team members for information and action
+--Monitor the changes
 060950d24bc74bab12b8a4476e50b489b1b2a97a 
 
 
