@@ -5,7 +5,19 @@
       "structDescriptor": "NBC_CUST.OT_CH_AGE_ADV_QUART",
       "arrayDescriptor": "NBC_CUST.NT_CH_AGE_ADV_QUART"
     },
-    "dealYears": "NEW VALUE ADDED",
+    "dealYears": [
+      "683",
+      "1885",
+      "2687",
+      "643",
+      "645",
+      "647",
+      "649",
+      "3087",
+      "2283",
+      "1083",
+      "3487"
+    ],
     "quarters": [],
     "channels": [
       "10008",
@@ -23,7 +35,7 @@
     "subdivisionId": null,
     "timeStripId": null,
     "corporateDemoName": "P18-49",
-    "liabDateStr": "1Q18",
+    "liabDateStr": "4Q18",
     "loadType": "network-dmt",
     "highPriority": null,
     "runVersion": 0,
@@ -60,7 +72,19 @@
       "structDescriptor": "NBC_CUST.OT_CH_AGE_ADV_QUART",
       "arrayDescriptor": "NBC_CUST.NT_CH_AGE_ADV_QUART"
     },
-    "dealYears": "NEW VALUE ADDED",
+    "dealYears": [
+      "683",
+      "1885",
+      "2687",
+      "643",
+      "645",
+      "647",
+      "649",
+      "3087",
+      "2283",
+      "1083",
+      "3487"
+    ],
     "quarters": [],
     "channels": [
       "10152",
@@ -79,7 +103,7 @@
     "subdivisionId": null,
     "timeStripId": null,
     "corporateDemoName": "P18-49",
-    "liabDateStr": "1Q18",
+    "liabDateStr": "4Q18",
     "loadType": "network-dmt",
     "highPriority": null,
     "runVersion": 0,
@@ -116,7 +140,19 @@
       "structDescriptor": "NBC_CUST.OT_CH_AGE_ADV_QUART",
       "arrayDescriptor": "NBC_CUST.NT_CH_AGE_ADV_QUART"
     },
-    "dealYears": "NEW VALUE ADDED",
+    "dealYears": [
+      "683",
+      "1885",
+      "2687",
+      "643",
+      "645",
+      "647",
+      "649",
+      "3087",
+      "2283",
+      "1083",
+      "3487"
+    ],
     "quarters": [],
     "channels": [
       "10108",
@@ -135,7 +171,7 @@
     "subdivisionId": null,
     "timeStripId": null,
     "corporateDemoName": "P18-49",
-    "liabDateStr": "1Q18",
+    "liabDateStr": "3Q18",
     "loadType": "network-dmt",
     "highPriority": null,
     "runVersion": 0,
@@ -172,7 +208,19 @@
       "structDescriptor": "NBC_CUST.OT_CH_AGE_ADV_QUART",
       "arrayDescriptor": "NBC_CUST.NT_CH_AGE_ADV_QUART"
     },
-    "dealYears": "NEW VALUE ADDED",
+    "dealYears": [
+      "683",
+      "1885",
+      "2687",
+      "643",
+      "645",
+      "647",
+      "649",
+      "3087",
+      "2283",
+      "1083",
+      "3487"
+    ],
     "quarters": [],
     "channels": [
       "10153",
@@ -190,7 +238,7 @@
     "subdivisionId": null,
     "timeStripId": null,
     "corporateDemoName": "P18-49",
-    "liabDateStr": "1Q18",
+    "liabDateStr": "4Q18",
     "loadType": "network-dmt",
     "highPriority": null,
     "runVersion": 0,
@@ -227,7 +275,19 @@
       "structDescriptor": "NBC_CUST.OT_CH_AGE_ADV_QUART",
       "arrayDescriptor": "NBC_CUST.NT_CH_AGE_ADV_QUART"
     },
-    "dealYears": "NEW VALUE ADDED",
+    "dealYears": [
+      "683",
+      "1885",
+      "2687",
+      "643",
+      "645",
+      "647",
+      "649",
+      "3087",
+      "2283",
+      "1083",
+      "3487"
+    ],
     "quarters": [],
     "channels": [
       "10106",
@@ -245,7 +305,7 @@
     "subdivisionId": null,
     "timeStripId": null,
     "corporateDemoName": "P18-49",
-    "liabDateStr": "1Q18",
+    "liabDateStr": "4Q18",
     "loadType": "network-dmt",
     "highPriority": null,
     "runVersion": 0,
@@ -282,7 +342,19 @@
       "structDescriptor": "NBC_CUST.OT_CH_AGE_ADV_QUART",
       "arrayDescriptor": "NBC_CUST.NT_CH_AGE_ADV_QUART"
     },
-    "dealYears": "NEW VALUE ADDED",
+    "dealYears": [
+      "683",
+      "1885",
+      "2687",
+      "643",
+      "645",
+      "647",
+      "649",
+      "3087",
+      "2283",
+      "1083",
+      "3487"
+    ],
     "quarters": [],
     "channels": [
       "10206",
@@ -302,7 +374,7 @@
     "subdivisionId": null,
     "timeStripId": null,
     "corporateDemoName": "P18-49",
-    "liabDateStr": "1Q18",
+    "liabDateStr": "4Q18",
     "loadType": "network-dmt",
     "highPriority": null,
     "runVersion": 0,
