@@ -72,7 +72,7 @@
       "structDescriptor": "NBC_CUST.OT_CH_AGE_ADV_QUART",
       "arrayDescriptor": "NBC_CUST.NT_CH_AGE_ADV_QUART"
     },
-    "dealYears": "NEW VALUE ADDED",
+    "dealYears": "\"NEW VALUE ADDED\"NEW VALUE ADDED",
     "quarters": [],
     "channels": [
       "10152",
@@ -196,7 +196,7 @@
       "structDescriptor": "NBC_CUST.OT_CH_AGE_ADV_QUART",
       "arrayDescriptor": "NBC_CUST.NT_CH_AGE_ADV_QUART"
     },
-    "dealYears": "NEW VALUE ADDED",
+    "dealYears": "\"NEW VALUE ADDED\"NEW VALUE ADDED",
     "quarters": [],
     "channels": [
       "10153",
@@ -251,7 +251,7 @@
       "structDescriptor": "NBC_CUST.OT_CH_AGE_ADV_QUART",
       "arrayDescriptor": "NBC_CUST.NT_CH_AGE_ADV_QUART"
     },
-    "dealYears": "NEW VALUE ADDED",
+    "dealYears": "\"NEW VALUE ADDED\"NEW VALUE ADDED",
     "quarters": [],
     "channels": [
       "10106",
