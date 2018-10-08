@@ -127,7 +127,8 @@
     "intervalStart": null,
     "intervalEnd": null,
     "intervalMinutes": null,
-    "intervalOffsetMinutes": 0
+    "intervalOffsetMinutes": 0,
+    "abc": "1234"
   },
   {
     "oracleParams": {
@@ -258,7 +259,8 @@
     "intervalStart": null,
     "intervalEnd": null,
     "intervalMinutes": null,
-    "intervalOffsetMinutes": 0
+    "intervalOffsetMinutes": 0,
+    "abc": "1234"
   },
   {
     "oracleParams": {
@@ -321,7 +323,8 @@
     "intervalStart": null,
     "intervalEnd": null,
     "intervalMinutes": null,
-    "intervalOffsetMinutes": 0
+    "intervalOffsetMinutes": 0,
+    "abc": "1234"
   },
   {
     "oracleParams": {
