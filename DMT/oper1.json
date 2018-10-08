@@ -1,0 +1,222 @@
+package com.cg.app.service;
+
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.Year;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.IsoFields;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import org.apache.tomcat.util.codec.binary.Base64;
+import org.eclipse.egit.github.core.Repository;
+import org.eclipse.egit.github.core.RepositoryContents;
+import org.eclipse.egit.github.core.client.GitHubClient;
+import org.eclipse.egit.github.core.service.ContentsService;
+import org.eclipse.egit.github.core.service.RepositoryService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+@Service
+@RefreshScope
+public class Getservice {
+
+	public static final String BLANK = "";
+
+	@Value("${git.token}")
+	String TOKEN;
+
+	@Value("${git.userName}")
+	String USER;
+
+	@Value("${git.repository}")
+	String REPONAME;
+
+	@Value("${git.branch}")
+	String BRANCH;
+
+	@Value("${git.commitMsg}")
+	String COMMIT_MESSAGE;
+
+	@Value("#{'${dmt.file.add.skipValues}'.split(',')}")
+	private List<String> SKIPADDVALUES;
+
+	@Value("#{'${dmt.file.add.skipKey}'.split(',')}")
+	private String SKIPADDKEY;
+
+	@Value("#{'${dmt.file.add.field}'.split(',')}")
+	private List<String> ADDFIELD;
+
+	@Value("#{'${dmt.file.add.value}'.split(',')}")
+	private List<String> ADDVALUE;
+
+	@Value("#{'${dmt.file.add.operation}'.split(',')}")
+	private List<String> OPERATION;
+
+	String FIELD_UPDATE_VALUE;
+
+	@Value("${git.resturl}")
+	String resturl;
+
+	@Autowired
+	GitCommitService gitCommitService;
+
+	public String fetchAndUpdateInGithub(String FILENAME)
+
+	{
+		String responseMessage = BLANK;
+		String updatedContent = BLANK;
+		String sb = BLANK;
+		GitHubClient githubClient = new GitHubClient();
+		// githubClient.setOAuth2Token(TOKEN);
+		githubClient.setCredentials(USER, TOKEN);
+		FIELD_UPDATE_VALUE = Getservice.quarter();
+		RepositoryService repoService = new RepositoryService(githubClient);
+		Repository repo;
+		try {
+			// List<Repository> l = repoService.getOrgRepositories(ORGANIZATION);
+			// for (Repository repository : l) {
+			// if (repository.getName().equals(REPONAME)) {
+			// repo = repository;
+
+			repo = repoService.getRepository(USER, REPONAME);
+			
+		} catch (Exception e) {
+			throw new RuntimeException("Cannot connect to the gitHub Repository, please check the user credentials or the Repository name");
+		}
+			
+			// Fetching the contents from the file.
+			ContentsService contentService = new ContentsService(githubClient);
+			List<RepositoryContents> contents;
+			try {
+				contents = contentService.getContents(repo, FILENAME);
+				for (RepositoryContents content : contents) {
+					String fileConent = content.getContent();
+					String valueDecoded = new String(Base64.decodeBase64(fileConent.getBytes()));
+					sb = sb + valueDecoded;
+				}
+			} catch (IOException e) {
+				throw new RuntimeException(
+						"Entered file name cannot be found in the repository, please check the filename");
+			}
+
+			// Updating the required field from contents after fetching.
+			try {
+				JsonArray jsonArray = (JsonArray) new JsonParser().parse(sb);
+				JsonObject explrObject = null;
+				List<JsonObject> list = new ArrayList<>();
+
+				Boolean flag = false;
+				for (String keyCheck : ADDFIELD) {
+					flag = validateField(jsonArray.get(0).getAsJsonObject(), keyCheck);
+					if (flag == false) {
+						throw new RuntimeException("Entered field can not be found in the file");
+					}
+				}
+
+				if (flag) {
+					for (int i = 0; i < jsonArray.size(); i++) {
+						explrObject = jsonArray.get(i).getAsJsonObject();
+						JsonElement jsonElement = explrObject.get(SKIPADDKEY);
+						String skipVal = jsonElement.getAsString();
+
+						if (SKIPADDVALUES.contains(skipVal)) {
+							list.add(explrObject);
+						} else {
+							for (int k = 0; k < ADDFIELD.size(); k++) {
+								String key = ADDFIELD.get(k);
+								String value = ADDVALUE.get(k);
+								String operation = OPERATION.get(k);
+								JsonElement keyValue = explrObject.get(key);
+
+								if (operation.equalsIgnoreCase("ADD")) {
+									try {
+										JsonArray jArray = keyValue.getAsJsonArray();
+										jArray.add(value);
+									} catch (Exception e) {
+										throw new RuntimeException(
+												key + " :Not a JSON Array, only values to Json Array can be added.");
+									}
+								} else if (operation.equalsIgnoreCase("REPLACE")) {
+									if (value.equals("Dynamic_quarter")) {
+										String replaceKey = key;
+										String replaceValue = Getservice.quarter();
+										explrObject.addProperty(replaceKey, replaceValue);
+									} else {
+										explrObject.addProperty(key, value);
+									}
+								}
+							}
+							list.add(explrObject);
+						}
+					}
+				}
+
+				String compactJson = list.toString();
+				String prettyJson = toPrettyFormat(compactJson);
+				updatedContent = prettyJson;
+				responseMessage = gitCommitService.doInBackground(githubClient, repo, BRANCH, REPONAME, FILENAME,
+						updatedContent, FILENAME + " " + COMMIT_MESSAGE, USER);
+
+			} catch (Exception e) {
+				// e.printStackTrace();
+				throw new RuntimeException("Error while Updating " + e.getLocalizedMessage());
+			}
+
+			// Triggering the API after the updating the value.
+			RestTemplate restTemplate = new RestTemplate();
+			String result = restTemplate.postForObject(resturl, updatedContent, String.class);
+
+			// Triggering the mail API to send e-mail after the API call has been done.
+			// gitCommitService.sendMail();
+
+		
+
+		if (!responseMessage.equals("") || responseMessage != null) {
+			return responseMessage;
+		}
+		return responseMessage;
+
+	}
+
+	// Method which checks for the entered FIELD present or not in the file.
+	public static Boolean validateField(JsonObject jsonObj, String keyCheck) {
+
+		if (jsonObj.has(keyCheck)) {
+			return true;
+		} else
+			return false;
+	}
+
+	// Method to beautify the JSON.
+
+	public static String toPrettyFormat(String jsonString) {
+		String gson = new GsonBuilder().setPrettyPrinting().serializeNulls().create()
+				.toJson(new JsonParser().parse(jsonString));
+		return gson;
+	}
+
+	// Method that calculate & returns the quarter to be updated.
+	public static String quarter() {
+		String next = BLANK;
+		int quarter = LocalDate.now().get(IsoFields.QUARTER_OF_YEAR);
+		String year = Year.now().format(DateTimeFormatter.ofPattern("yy"));
+		if (quarter < 4) {
+			int qut = quarter + 1;
+			next = qut + "Q" + year;
+		} else if (quarter == 4) {
+			int qut = 1;
+			next = qut + "Q" + year;
+		}
+		return next;
+	}
+}
