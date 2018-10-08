@@ -86,7 +86,12 @@
       "3487"
     ],
     "quarters": [],
-    "channels": "1234",
+    "channels": [
+      "10152",
+      "10187",
+      "10046",
+      "10027"
+    ],
     "agencies": [],
     "advertisers": [],
     "ratecards": [],
@@ -98,7 +103,7 @@
     "subdivisionId": null,
     "timeStripId": null,
     "corporateDemoName": "P18-49",
-    "liabDateStr": "1Q18",
+    "liabDateStr": "4Q18",
     "loadType": "network-dmt",
     "highPriority": null,
     "runVersion": 0,
@@ -116,19 +121,18 @@
       "parallelism": 5,
       "executionType": "queued"
     },
-    "psnId": "value",
+    "psnId": null,
     "dirtyParams": null,
     "extractDays": 0,
     "tibcoJobId": null,
     "callbackUrl": null,
     "callbackPayload": null,
     "ratingSourceCode": null,
-    "supportedOracleType": "value",
+    "supportedOracleType": "NETWORK",
     "intervalStart": null,
     "intervalEnd": null,
     "intervalMinutes": null,
-    "intervalOffsetMinutes": 0,
-    "abc": "1234"
+    "intervalOffsetMinutes": 0
   },
   {
     "oracleParams": {
@@ -218,7 +222,11 @@
       "3487"
     ],
     "quarters": [],
-    "channels": "1234",
+    "channels": [
+      "10153",
+      "10155",
+      "10166"
+    ],
     "agencies": [],
     "advertisers": [],
     "ratecards": [],
@@ -230,7 +238,7 @@
     "subdivisionId": null,
     "timeStripId": null,
     "corporateDemoName": "P18-49",
-    "liabDateStr": "1Q18",
+    "liabDateStr": "4Q18",
     "loadType": "network-dmt",
     "highPriority": null,
     "runVersion": 0,
@@ -248,19 +256,18 @@
       "parallelism": 5,
       "executionType": "queued"
     },
-    "psnId": "value",
+    "psnId": null,
     "dirtyParams": null,
     "extractDays": 0,
     "tibcoJobId": null,
     "callbackUrl": null,
     "callbackPayload": null,
     "ratingSourceCode": null,
-    "supportedOracleType": "value",
+    "supportedOracleType": "NETWORK",
     "intervalStart": null,
     "intervalEnd": null,
     "intervalMinutes": null,
-    "intervalOffsetMinutes": 0,
-    "abc": "1234"
+    "intervalOffsetMinutes": 0
   },
   {
     "oracleParams": {
@@ -282,7 +289,11 @@
       "3487"
     ],
     "quarters": [],
-    "channels": "1234",
+    "channels": [
+      "10106",
+      "10011",
+      "10126"
+    ],
     "agencies": [],
     "advertisers": [],
     "ratecards": [],
@@ -294,7 +305,7 @@
     "subdivisionId": null,
     "timeStripId": null,
     "corporateDemoName": "P18-49",
-    "liabDateStr": "1Q18",
+    "liabDateStr": "4Q18",
     "loadType": "network-dmt",
     "highPriority": null,
     "runVersion": 0,
@@ -312,19 +323,18 @@
       "parallelism": 5,
       "executionType": "queued"
     },
-    "psnId": "value",
+    "psnId": null,
     "dirtyParams": null,
     "extractDays": 0,
     "tibcoJobId": null,
     "callbackUrl": null,
     "callbackPayload": null,
     "ratingSourceCode": null,
-    "supportedOracleType": "value",
+    "supportedOracleType": "NETWORK",
     "intervalStart": null,
     "intervalEnd": null,
     "intervalMinutes": null,
-    "intervalOffsetMinutes": 0,
-    "abc": "1234"
+    "intervalOffsetMinutes": 0
   },
   {
     "oracleParams": {
