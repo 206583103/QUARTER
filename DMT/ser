@@ -1,0 +1,231 @@
+package com.cg.app.service;
+
+import java.io.IOException;
+import java.net.Proxy;
+import java.util.ArrayList;
+import java.util.List;
+import javax.annotation.PostConstruct;
+
+import org.apache.tomcat.util.codec.binary.Base64;
+import org.eclipse.egit.github.core.Repository;
+import org.eclipse.egit.github.core.RepositoryContents;
+import org.eclipse.egit.github.core.client.GitHubClient;
+import org.eclipse.egit.github.core.service.ContentsService;
+import org.eclipse.egit.github.core.service.RepositoryService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.client.SimpleClientHttpRequestFactory;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.cg.app.domain.Fields;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import com.google.gson.JsonPrimitive;
+
+@Service
+// @RefreshScope
+public class Getservice {
+
+	public static final String BLANK = "";
+
+	@Value("${git.token}")
+	String TOKEN;
+
+	@Value("${git.userName}")
+	String USER;
+
+	@Value("${git.repository}")
+	String REPONAME;
+
+	// @Value("${git.organization}")
+	// String ORGANIZATION;
+
+	@Value("${git.branch}")
+	String BRANCH;
+
+	@Value("${git.commitMsg}")
+	String COMMIT_MESSAGE;
+
+	String FIELD_UPDATE_VALUE;
+
+	@Value("${git.resturl}")
+	String resturl;
+
+	@Value("#{'${dmt.changes.skipKey}'.split(',')}")
+	private String EXCLUDEKEY;
+
+	@Autowired
+	GitCommitService gitCommitService;
+
+	@Autowired
+	RestTemplate restTemplate;
+
+	@Autowired
+	RestTemplate restTemplateNoProxy;
+
+	@PostConstruct
+	public void init() {
+
+		SimpleClientHttpRequestFactory clientHttpReq = new SimpleClientHttpRequestFactory();
+		clientHttpReq.setProxy(Proxy.NO_PROXY);
+		restTemplateNoProxy.setRequestFactory(clientHttpReq);
+	}
+
+	public String fetchAndUpdateInGithub(String fileName, Fields field, String fName) {
+		String responseMessage = BLANK;
+		String updatedContent = BLANK;
+		String sb = BLANK;
+
+		String key = field.getKey();
+		String operation = field.getOperation();
+		List<String> value = field.getValue();
+		List<String> excludeValues = field.getExcludeValues();
+		String dynamicFileName = fileName + "/" + fName;
+
+		// Establishing connection with the GitRepository.
+		GitHubClient githubClient = new GitHubClient();
+		githubClient.setCredentials(USER, TOKEN);
+		RepositoryService repoService = new RepositoryService(githubClient);
+
+		// Connecting to the given organization and to the given repository
+		Repository repo = null;
+		try {
+
+			// List<Repository> lr = repoService.getOrgRepositories(ORGANIZATION);
+			// for (Repository repository : lr) {
+			// if (repository.getName().matches(REPONAME)) {
+			// repo = repository;
+			// break;
+
+			repo = repoService.getRepository(USER, REPONAME);
+			// }
+			// }
+		} catch (Exception e) {
+			throw new RuntimeException(
+					"Cannot establish connection to Repository, check user credentials or Repository");
+		}
+
+		// Fetching the contents from the File under connected Repository.
+		ContentsService contentService = new ContentsService(githubClient);
+		List<RepositoryContents> contents;
+		try {
+			contents = contentService.getContents(repo, dynamicFileName, "refs/heads/" + BRANCH);
+			for (RepositoryContents content : contents) {
+				String fileConent = content.getContent();
+				String valueDecoded = new String(Base64.decodeBase64(fileConent.getBytes()));
+				sb = sb + valueDecoded;
+			}
+		} catch (IOException e) {
+			throw new RuntimeException(
+					"Entered file name cannot be found in the Branch, please give proper filename or Branch name");
+		}
+
+		// Searching the FIELD & Updating the Value of a FIELD.
+		try {
+			JsonArray jsonArray = (JsonArray) new JsonParser().parse(sb);
+			JsonObject explrObject = null;
+			List<JsonObject> list = new ArrayList<>();
+			Boolean flag = validateField(jsonArray.get(0).getAsJsonObject(), key);
+			if (flag) {
+				for (int i = 0; i < jsonArray.size(); i++) {
+					explrObject = jsonArray.get(i).getAsJsonObject();
+					JsonElement jsonElement = explrObject.get(EXCLUDEKEY);
+					String skipVal = jsonElement.getAsString();
+					String key1 = key;
+					JsonElement keyValue = explrObject.get(key1);
+
+					if (excludeValues.contains(skipVal)) {
+						list.add(explrObject);
+					} else {
+						if (operation.equalsIgnoreCase("ADD")) {
+							try {
+								JsonArray ja = keyValue.getAsJsonArray();
+								for (String jEle : value) {
+									JsonElement el = new JsonPrimitive(jEle);
+									if (ja.contains(el)) {
+										continue;
+									} else {
+										ja.add(el);
+									}
+								}
+							} catch (Exception e) {
+								throw new RuntimeException("Value of FEILD:" + key
+										+ ", is not a JSON Array, only values to Json Array can be added.");
+							}
+						}
+						else if (operation.equalsIgnoreCase("REPLACE")) {
+							if (keyValue.isJsonArray()) {
+								throw new RuntimeException("Cannot replace the values from FIELD:" + key
+										+ ",as it's value is an jsonArray only add operation can be done");
+							} else {
+								String newValue = value.get(0);
+								explrObject.addProperty(key, newValue);
+							}
+
+						}list.add(explrObject);
+
+					}  
+				}
+
+			} else {
+				throw new RuntimeException("Entered key can not be found in the file");
+			}
+
+			String compactJson = list.toString();
+			String prettyJson = toPrettyFormat(compactJson);
+			updatedContent = prettyJson;
+			responseMessage = gitCommitService.doInBackground(githubClient, repo, BRANCH, REPONAME, dynamicFileName,
+					updatedContent, fileName + " " + COMMIT_MESSAGE, USER);
+
+		} catch (
+
+		Exception e) {
+			 throw new RuntimeException("Error occured-->" + e.getMessage());
+
+		}
+
+		// Calling Api after the update has done
+		/*
+		 * try { String result = restTemplate.postForObject(resturl, updatedContent,
+		 * String.class); } catch (Exception e) { throw new
+		 * RuntimeException("please check the Resturl specified"); }
+		 */
+
+		// String body=restTemplate.getForObject(url, responseType)
+
+		// Triggering Mail utility after Api call.
+		/*
+		 * try { gitCommitService.sendMail(appName); } catch (Exception e) { throw new
+		 * RuntimeException("Error while Triggering the mail Api"); }
+		 */
+
+		if (!responseMessage.equals("") || responseMessage != null) {
+
+			return responseMessage;
+		}
+		return responseMessage;
+
+	}
+
+	// Checking for the FIELD present in the file or not.
+	public static Boolean validateField(JsonObject jsonObj, String field) {
+
+		if (jsonObj.has(field)) {
+			return true;
+		} else
+			return false;
+
+	}
+
+	// Beautifying the Json content.
+	public static String toPrettyFormat(String jsonString) {
+		String gson = new GsonBuilder().setPrettyPrinting().serializeNulls().create()
+				.toJson(new JsonParser().parse(jsonString));
+		return gson;
+	}
+
+}
