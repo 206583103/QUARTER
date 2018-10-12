@@ -1,4 +1,4 @@
-null[
+nullnull[
   {
     "oracleParams": {
       "procName": "call NBC_CUST.PKG_DMT_NETWORK_PROCEDURE.Network_Conversion_Validation(?)",
