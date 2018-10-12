@@ -15,8 +15,7 @@
       "649",
       "3087",
       "2283",
-      "1083",
-      "3487"
+      "1083"
     ],
     "quarters": [],
     "channels": [
@@ -30,12 +29,12 @@
     "logType": null,
     "planStatuses": [],
     "quarterOffsets": [],
-    "userId": 777,
+    "userId": 18467,
     "divisionId": null,
     "subdivisionId": null,
     "timeStripId": null,
     "corporateDemoName": "P18-49",
-    "liabDateStr": "4Q18",
+    "liabDateStr": "3Q18",
     "loadType": "network-dmt",
     "highPriority": null,
     "runVersion": 0,
@@ -82,16 +81,14 @@
       "649",
       "3087",
       "2283",
-      "1083",
-      "3487"
+      "1083"
     ],
     "quarters": [],
     "channels": [
       "10152",
       "10187",
       "10046",
-      "10027",
-      "1234"
+      "10027"
     ],
     "agencies": [],
     "advertisers": [],
@@ -99,12 +96,12 @@
     "logType": null,
     "planStatuses": [],
     "quarterOffsets": [],
-    "userId": 777,
+    "userId": 18467,
     "divisionId": null,
     "subdivisionId": null,
     "timeStripId": null,
     "corporateDemoName": "P18-49",
-    "liabDateStr": "1234",
+    "liabDateStr": "3Q18",
     "loadType": "network-dmt",
     "highPriority": null,
     "runVersion": 0,
@@ -151,16 +148,14 @@
       "649",
       "3087",
       "2283",
-      "1083",
-      "3487"
+      "1083"
     ],
     "quarters": [],
     "channels": [
       "10108",
       "10086",
       "10066",
-      "10087",
-      "1234"
+      "10087"
     ],
     "agencies": [],
     "advertisers": [],
@@ -168,12 +163,12 @@
     "logType": null,
     "planStatuses": [],
     "quarterOffsets": [],
-    "userId": 777,
+    "userId": 18467,
     "divisionId": null,
     "subdivisionId": null,
     "timeStripId": null,
     "corporateDemoName": "P18-49",
-    "liabDateStr": "1234",
+    "liabDateStr": "3Q18",
     "loadType": "network-dmt",
     "highPriority": null,
     "runVersion": 0,
@@ -220,15 +215,13 @@
       "649",
       "3087",
       "2283",
-      "1083",
-      "3487"
+      "1083"
     ],
     "quarters": [],
     "channels": [
       "10153",
       "10155",
-      "10166",
-      "1234"
+      "10166"
     ],
     "agencies": [],
     "advertisers": [],
@@ -236,12 +229,12 @@
     "logType": null,
     "planStatuses": [],
     "quarterOffsets": [],
-    "userId": 777,
+    "userId": 18467,
     "divisionId": null,
     "subdivisionId": null,
     "timeStripId": null,
     "corporateDemoName": "P18-49",
-    "liabDateStr": "1234",
+    "liabDateStr": "3Q18",
     "loadType": "network-dmt",
     "highPriority": null,
     "runVersion": 0,
@@ -288,15 +281,13 @@
       "649",
       "3087",
       "2283",
-      "1083",
-      "3487"
+      "1083"
     ],
     "quarters": [],
     "channels": [
       "10106",
       "10011",
-      "10126",
-      "1234"
+      "10126"
     ],
     "agencies": [],
     "advertisers": [],
@@ -304,12 +295,12 @@
     "logType": null,
     "planStatuses": [],
     "quarterOffsets": [],
-    "userId": 777,
+    "userId": 18467,
     "divisionId": null,
     "subdivisionId": null,
     "timeStripId": null,
     "corporateDemoName": "P18-49",
-    "liabDateStr": "1234",
+    "liabDateStr": "3Q18",
     "loadType": "network-dmt",
     "highPriority": null,
     "runVersion": 0,
@@ -356,8 +347,7 @@
       "649",
       "3087",
       "2283",
-      "1083",
-      "3487"
+      "1083"
     ],
     "quarters": [],
     "channels": [
@@ -373,12 +363,12 @@
     "logType": null,
     "planStatuses": [],
     "quarterOffsets": [],
-    "userId": 777,
+    "userId": 18467,
     "divisionId": null,
     "subdivisionId": null,
     "timeStripId": null,
     "corporateDemoName": "P18-49",
-    "liabDateStr": "4Q18",
+    "liabDateStr": "3Q18",
     "loadType": "network-dmt",
     "highPriority": null,
     "runVersion": 0,
