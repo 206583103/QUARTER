@@ -22,7 +22,8 @@
     "channels": [
       "10008",
       "10009",
-      "10010"
+      "10010",
+      "1234"
     ],
     "agencies": [],
     "advertisers": [],
@@ -35,7 +36,7 @@
     "subdivisionId": null,
     "timeStripId": null,
     "corporateDemoName": "P18-49",
-    "liabDateStr": "4Q18",
+    "liabDateStr": "1234",
     "loadType": "network-dmt",
     "highPriority": null,
     "runVersion": 0,
@@ -53,8 +54,8 @@
       "parallelism": 5,
       "executionType": "queued"
     },
-    "psnId": null,
-    "dirtyParams": null,
+    "psnId": "1234",
+    "dirtyParams": "1234",
     "extractDays": 0,
     "tibcoJobId": null,
     "callbackUrl": null,
@@ -90,7 +91,8 @@
       "10152",
       "10187",
       "10046",
-      "10027"
+      "10027",
+      "1234"
     ],
     "agencies": [],
     "advertisers": [],
@@ -103,7 +105,7 @@
     "subdivisionId": null,
     "timeStripId": null,
     "corporateDemoName": "P18-49",
-    "liabDateStr": "4Q18",
+    "liabDateStr": "1234",
     "loadType": "network-dmt",
     "highPriority": null,
     "runVersion": 0,
@@ -121,8 +123,8 @@
       "parallelism": 5,
       "executionType": "queued"
     },
-    "psnId": null,
-    "dirtyParams": null,
+    "psnId": "1234",
+    "dirtyParams": "1234",
     "extractDays": 0,
     "tibcoJobId": null,
     "callbackUrl": null,
@@ -158,7 +160,8 @@
       "10108",
       "10086",
       "10066",
-      "10087"
+      "10087",
+      "1234"
     ],
     "agencies": [],
     "advertisers": [],
@@ -171,7 +174,7 @@
     "subdivisionId": null,
     "timeStripId": null,
     "corporateDemoName": "P18-49",
-    "liabDateStr": "3Q18",
+    "liabDateStr": "1234",
     "loadType": "network-dmt",
     "highPriority": null,
     "runVersion": 0,
@@ -189,8 +192,8 @@
       "parallelism": 5,
       "executionType": "queued"
     },
-    "psnId": null,
-    "dirtyParams": null,
+    "psnId": "1234",
+    "dirtyParams": "1234",
     "extractDays": 0,
     "tibcoJobId": null,
     "callbackUrl": null,
@@ -225,7 +228,8 @@
     "channels": [
       "10153",
       "10155",
-      "10166"
+      "10166",
+      "1234"
     ],
     "agencies": [],
     "advertisers": [],
@@ -238,7 +242,7 @@
     "subdivisionId": null,
     "timeStripId": null,
     "corporateDemoName": "P18-49",
-    "liabDateStr": "4Q18",
+    "liabDateStr": "1234",
     "loadType": "network-dmt",
     "highPriority": null,
     "runVersion": 0,
@@ -256,8 +260,8 @@
       "parallelism": 5,
       "executionType": "queued"
     },
-    "psnId": null,
-    "dirtyParams": null,
+    "psnId": "1234",
+    "dirtyParams": "1234",
     "extractDays": 0,
     "tibcoJobId": null,
     "callbackUrl": null,
@@ -292,7 +296,8 @@
     "channels": [
       "10106",
       "10011",
-      "10126"
+      "10126",
+      "1234"
     ],
     "agencies": [],
     "advertisers": [],
@@ -305,7 +310,7 @@
     "subdivisionId": null,
     "timeStripId": null,
     "corporateDemoName": "P18-49",
-    "liabDateStr": "4Q18",
+    "liabDateStr": "1234",
     "loadType": "network-dmt",
     "highPriority": null,
     "runVersion": 0,
@@ -323,8 +328,8 @@
       "parallelism": 5,
       "executionType": "queued"
     },
-    "psnId": null,
-    "dirtyParams": null,
+    "psnId": "1234",
+    "dirtyParams": "1234",
     "extractDays": 0,
     "tibcoJobId": null,
     "callbackUrl": null,
