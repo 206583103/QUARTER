@@ -123,7 +123,7 @@
       "parallelism": 5,
       "executionType": "queued"
     },
-    "psnId": "1234",
+    "psnId": "string",
     "dirtyParams": "1234",
     "extractDays": 0,
     "tibcoJobId": null,
@@ -192,7 +192,7 @@
       "parallelism": 5,
       "executionType": "queued"
     },
-    "psnId": "1234",
+    "psnId": "string",
     "dirtyParams": "1234",
     "extractDays": 0,
     "tibcoJobId": null,
@@ -260,7 +260,7 @@
       "parallelism": 5,
       "executionType": "queued"
     },
-    "psnId": "1234",
+    "psnId": "string",
     "dirtyParams": "1234",
     "extractDays": 0,
     "tibcoJobId": null,
@@ -328,7 +328,7 @@
       "parallelism": 5,
       "executionType": "queued"
     },
-    "psnId": "1234",
+    "psnId": "string",
     "dirtyParams": "1234",
     "extractDays": 0,
     "tibcoJobId": null,
@@ -397,7 +397,7 @@
       "parallelism": 5,
       "executionType": "queued"
     },
-    "psnId": null,
+    "psnId": "string",
     "dirtyParams": null,
     "extractDays": 0,
     "tibcoJobId": null,
