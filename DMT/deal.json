@@ -154,7 +154,8 @@
       "10066",
       "10010",
       "10087",
-      "10027"
+      "10027",
+      "1234"
     ],
     "agencies": [],
     "advertisers": [],
@@ -167,7 +168,7 @@
     "subdivisionId": null,
     "timeStripId": null,
     "corporateDemoName": "P18-49",
-    "liabDateStr": null,
+    "liabDateStr": "1234",
     "loadType": "deal-dmt",
     "highPriority": null,
     "runVersion": 1,
