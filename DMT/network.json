@@ -90,8 +90,7 @@
       "10152",
       "10187",
       "10046",
-      "10027",
-      "1234"
+      "10027"
     ],
     "agencies": [],
     "advertisers": [],
@@ -104,7 +103,7 @@
     "subdivisionId": null,
     "timeStripId": null,
     "corporateDemoName": "P18-49",
-    "liabDateStr": "1234",
+    "liabDateStr": "4Q18",
     "loadType": "network-dmt",
     "highPriority": null,
     "runVersion": 0,
@@ -159,8 +158,7 @@
       "10108",
       "10086",
       "10066",
-      "10087",
-      "1234"
+      "10087"
     ],
     "agencies": [],
     "advertisers": [],
@@ -173,7 +171,7 @@
     "subdivisionId": null,
     "timeStripId": null,
     "corporateDemoName": "P18-49",
-    "liabDateStr": "1234",
+    "liabDateStr": "3Q18",
     "loadType": "network-dmt",
     "highPriority": null,
     "runVersion": 0,
@@ -227,8 +225,7 @@
     "channels": [
       "10153",
       "10155",
-      "10166",
-      "1234"
+      "10166"
     ],
     "agencies": [],
     "advertisers": [],
@@ -241,7 +238,7 @@
     "subdivisionId": null,
     "timeStripId": null,
     "corporateDemoName": "P18-49",
-    "liabDateStr": "1234",
+    "liabDateStr": "4Q18",
     "loadType": "network-dmt",
     "highPriority": null,
     "runVersion": 0,
@@ -295,8 +292,7 @@
     "channels": [
       "10106",
       "10011",
-      "10126",
-      "1234"
+      "10126"
     ],
     "agencies": [],
     "advertisers": [],
@@ -309,7 +305,7 @@
     "subdivisionId": null,
     "timeStripId": null,
     "corporateDemoName": "P18-49",
-    "liabDateStr": "1234",
+    "liabDateStr": "4Q18",
     "loadType": "network-dmt",
     "highPriority": null,
     "runVersion": 0,
@@ -365,8 +361,7 @@
       "10227",
       "10109",
       "10154",
-      "10247",
-      "1234"
+      "10247"
     ],
     "agencies": [],
     "advertisers": [],
@@ -379,7 +374,7 @@
     "subdivisionId": null,
     "timeStripId": null,
     "corporateDemoName": "P18-49",
-    "liabDateStr": "1234",
+    "liabDateStr": "4Q18",
     "loadType": "network-dmt",
     "highPriority": null,
     "runVersion": 0,
