@@ -67,7 +67,7 @@
     "subdivisionId": null,
     "timeStripId": null,
     "corporateDemoName": "P18-49",
-    "liabDateStr": "1234",
+    "liabDateStr": null,
     "loadType": "deal-dmt",
     "highPriority": null,
     "runVersion": 1,
@@ -154,8 +154,7 @@
       "10066",
       "10010",
       "10087",
-      "10027",
-      "1234,4568"
+      "10027"
     ],
     "agencies": [],
     "advertisers": [],
@@ -168,7 +167,7 @@
     "subdivisionId": null,
     "timeStripId": null,
     "corporateDemoName": "P18-49",
-    "liabDateStr": "1234",
+    "liabDateStr": null,
     "loadType": "deal-dmt",
     "highPriority": null,
     "runVersion": 1,
